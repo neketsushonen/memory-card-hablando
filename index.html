@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="memory.card.js"></script>
+
+        <title>Page Title</title>
+        <style>
+        * {
+     user-select: none;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     -moz-user-select: none;
+ }
+body {
+    margin: 0;
+}
+#cards {
+    width: 100vw;
+    height: 100vh;
+    border-collapse: collapse;
+    padding: 0;
+    table-layout: fixed;
+}
+td {
+    box-shadow: 0 0 1px #333 inset;
+    text-align: center;
+    overflow: hidden;
+    font-size: 30pt;
+    color: #FFF;
+    background: #F2B885;
+    transition: all 500ms ease-in-out, color 250ms ease-in-out, background 250ms ease-in-out;
+}
+td:hover {
+    color: #BF9B93;
+    background: #EBD9D7;
+
+}
+.down {
+    /*transform: rotateX(180deg);*/
+   /* -webkit-transform: rotateX(180deg);*/
+   /* color: transparent;*/
+    background: #3B3659;
+}
+.disabled {
+    background: #AEA;
+}
+        </style>
+    </head>
+    <body>
+        <table id="cards" border="1">
+            <tbody>
+            <tr>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+            </tr>
+            <tr>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+            </tr>
+            <tr>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+            </tr>
+            <tr>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+            </tr>
+            <tr>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+            </tr>
+            <tr>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+            </tr>
+            <tr>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+            </tr>
+            <tr>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+            </tr>
+            <tr>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+            </tr>
+            <tr>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg"  role="document">
+              <div class="modal-content" style="background-color: #EBD9D7;border-radius: 25px ;"> 
+                
+                <div class="modal-body" id="pregunta"  style="border-radius: 25px ;font-size: 70px; color:#BF9B93;background-color: #DFDADE;">
+                  ...
+                </div>
+                <div class="modal-footer" >
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>
