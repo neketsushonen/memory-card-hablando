@@ -1,4 +1,12 @@
+let randomOfCard = null;
 $(function(){
+
+    randomOfCard= function(){
+        var rand = (Math.floor(Math.random() * preguntas.length));
+        while(used[rand] == true){ rand = (Math.floor(Math.random() * preguntas.length));  }
+        return rand;
+    }
+
     function random(){
         var rand = (Math.floor(Math.random() * preguntas.length));
         while(used[rand] == true){ rand = (Math.floor(Math.random() * preguntas.length));  }
@@ -101,7 +109,23 @@ $(function(){
         "Es el día de tu cumpleaños y puedas comprar un libro que quieras, ¿cuál sería y qué contenido no podría faltar?",
         "¿Cuándo sueles estar más feliz y por qué?",
         "¿Cuáles serían tus vacaciones ideales y con quién?",
-        "Ahora mismo puedes recibir un regalo, ¿cuál sería?"
+        "Ahora mismo puedes recibir un regalo, ¿cuál sería?",
+
+        "¿En qué animal te gustaría convertirte?",
+        "¿Qué crees que pasaría si no existiera la tecnología hoy en día?",
+        "Si tuvieras solo dos opciones para elegir tus alimentos, ¿de dónde los sacarías: de una huerta o del supermercado? comenta tus razones.",
+        "¿De qué manera crees que podemos mejorar el cambio climático?",
+        "Si tuvieses la oportunidad de adoptar un niño(a), ¿lo harías y por qué?",
+        "Si mañana fueses presidente de la república, y puedes cambiar o adoptar una sola ley, ¿cuál sería?",
+        "¿Quién te hizo reír esta semana?",
+
+        "Tienes que promocionar tu país a un amigo extranjero para que lo visite, ¿qué le dirías?",
+        //"Si te dieran la oportunidad de irte a viajar durante un mes, ¿dónde sería y por qué?",
+        "¿Cuál es para ti el peor trabajo en el planeta?",
+        "Si pudieras viajar en el tiempo y darte un consejo a ti mismo, ¿cuál sería?",
+        "¿Prefieres actividades al aire libre o en un lugar cerrado? ¿Por qué?",
+        "¿Qué países te gustaría conocer? Nombra tres.",
+        "¿Cómo crees que será la vida en cien años más y por qué?",
 
 
     ];
@@ -114,6 +138,10 @@ $(function(){
     var moves = 0;
     var clicks = 0;
     function clicked(){
+
+        if($(this).hasClass("boton")){
+            return;
+        }
         ++clicks;
         ++moves;
         time = $.now();
@@ -128,16 +156,17 @@ $(function(){
                 opened[$(this).text()] = preguntas[random()];
 
             $(this).toggleClass("down");
+            $(this).removeClass("selected");
             $("#exampleModalCenter").modal();
             $("#pregunta").text(opened[$(this).text()]);
         } 
     }
     $("td").on("click", clicked);
     function setup(retry){
-    if(retry){
-        $("td").on("click", clicked);
-        $("td").toggleClass("down");
-    }
+        if(retry){
+            $("td").on("click", clicked);
+            $("td").toggleClass("down");
+        }
       
         var icons = Array.from({length: preguntas.length}, (v, k) => k); ;
         let index = 0;
@@ -149,6 +178,28 @@ $(function(){
         }
         $("td").removeAttr("name");
         $("td").removeClass("disabled");
+
+        
     }
     setup();
 });
+
+function elegir(){
+    let number = 300;
+        function start(counter, indiceAnterior){
+            if(counter < number){
+            setTimeout(function(){
+                //console.log(counter,randomOfCard());
+                let indiceActual = randomOfCard();
+                $($("td").eq(indiceAnterior)).addClass("down");
+                $($("td").eq(indiceActual)).removeClass("down");
+
+                start(counter+10,indiceActual);
+            }, counter+10);
+            }else{
+                $($("td").eq(indiceAnterior)).addClass("down");
+                $($("td").eq(indiceAnterior)).addClass("selected");
+            }
+        }
+        start(0,randomOfCard());
+}

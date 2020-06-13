@@ -31,7 +31,7 @@ td {
     box-shadow: 0 0 1px #333 inset;
     text-align: center;
     overflow: hidden;
-    font-size: 30pt;
+    font-size: 25pt;
     color: #FFF;
     background: #F2B885;
     transition: all 500ms ease-in-out, color 250ms ease-in-out, background 250ms ease-in-out;
@@ -41,6 +41,14 @@ td:hover {
     background: #EBD9D7;
 
 }
+
+.selected {
+    border-color: red;
+    border-width: 10px 10px;
+    color: #BF9B93 !important;
+    background: #EBD9D7 !important;
+}
+
 .down {
     /*transform: rotateX(180deg);*/
    /* -webkit-transform: rotateX(180deg);*/
@@ -144,6 +152,24 @@ td:hover {
                 <td class="down"></td>
                 <td class="down"></td>
                 <td class="down"></td>
+            </tr>
+            <tr>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+            </tr>
+            <tr>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down"></td>
+                <td class="down boton"> <button onclick="javascript:elegir()" class="btn btn-info">Elegir</button> </td>
             </tr>
             </tbody>
         </table>
